@@ -1,4 +1,4 @@
-// Functions responsible for drawing on canvas
+1// Functions responsible for drawing on canvas
 
 game.drawTile = function (tileColumn, tileRow, x, y) {
 	game.context.drawImage(
@@ -76,7 +76,7 @@ game.redraw = function () {
 	// Draw the player
 	game.drawPlayer()
 
-	game.counter.innerHTML = "A game by Karol Swierczek | Controls: A, D / arrows and SPACE | Points: " + Math.round(-game.player.highestY / (3 * game.options.tileHeight)), game.canvas.width - 50, game.canvas.height - 12
+	game.counter.innerHTML = " Points: " + Math.round(-game.player.highestY / (3 * game.options.tileHeight)), game.canvas.width - 50, game.canvas.height - 12
 }
 
 game.requestRedraw = function () {

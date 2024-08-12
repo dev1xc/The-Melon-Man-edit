@@ -40,12 +40,12 @@ canvas {
 
 .counter {
   font-family: 'superscript', Arial, sans-serif;
-  font-size: 22px;
+  font-size: 40px;
   color: black;
   position: absolute;
-  bottom: 0;
+  top: 0;
+  left: 0;
   right: 20px;
-  text-align: center;
   z-index: 2;
 }
 
