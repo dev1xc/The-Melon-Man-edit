@@ -39,34 +39,20 @@ game.player = {
 			right: [{tileColumn: 9, tileRow: 0}, {tileColumn: 8, tileRow: 0}, {tileColumn: 9, tileRow: 0}, {tileColumn: 7, tileRow: 0}]
 		},
 		jump: function (type) {
-      if (this.isInAir) {
-				clearInterval(this.fallInterval)
-				game.sounds.jump.play()
-				this.isInAir = true
-				this.startedJump = true
-				var startingY = this.y
-				var time = 2
-				maxHeight = 242
-				if (type == "fall") {
-					time = 60
-					maxHeight = 0
-				}
-				this.fallTimeout(startingY, time, maxHeight)
-			}
-			if (!this.isInAir) {
-				clearInterval(this.fallInterval)
-				game.sounds.jump.play()
-				this.isInAir = true
-				this.startedJump = true
-				var startingY = this.y
-				var time = 1
-				maxHeight = 121
-				if (type == "fall") {
-					time = 30
-					maxHeight = 0
-				}
-				this.fallTimeout(startingY, time, maxHeight)
-			}
-      
-		}
+			if (!this.isInAir && (this.jumpCount < 2)) {
+        clearInterval(this.fallInterval)
+        game.sounds.jump.play()
+        this.isInAir = true
+        this.startedJump = true
+        this.jumpCount++; // Tăng biến jumpCount lên
+        var startingY = this.y
+        var time = 1
+        maxHeight = 121
+        if (type == "fall") {
+          time = 30
+          maxHeight = 0
+        }
+        this.fallTimeout(startingY, time, maxHeight)
+      }
+    }
 	}
