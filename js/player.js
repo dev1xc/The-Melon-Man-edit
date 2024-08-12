@@ -53,5 +53,19 @@ game.player = {
 				}
 				this.fallTimeout(startingY, time, maxHeight)
 			}
+      if (this.isInAir) {
+				clearInterval(this.fallInterval)
+				game.sounds.jump.play()
+				this.isInAir = true
+				this.startedJump = true
+				var startingY = this.y
+				var time = 1
+				maxHeight = 242
+				if (type == "fall") {
+					time = 60
+					maxHeight = 0
+				}
+				this.fallTimeout(startingY, time, maxHeight)
+			}
 		}
 	}
