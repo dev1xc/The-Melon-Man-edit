@@ -60,7 +60,9 @@ game.keydown = function (event) {
 			game.moveRight()
 			break
 		case 32:
-			game.player.jump()
+      if (game.player.jumpCount < 2) {
+        game.player.jump();
+      }
 			break
 	}
 		game.pressedKeys[event.keyCode] = true
