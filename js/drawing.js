@@ -52,7 +52,7 @@ game.redraw = function () {
 	if (game.backgrounds['trees'].loaded) {
 		game.context.drawImage(game.backgrounds['trees'].image, 0, game.canvas.height / 2 - game.player.y / 10, 332, 180)
 		game.context.drawImage(game.backgrounds['trees'].image, 332, game.canvas.height / 2 - game.player.y / 10, 332, 180)
-	}
+  }
 
 	// List nearest structures
 	var structuresToDraw = []

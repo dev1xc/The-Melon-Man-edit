@@ -13,7 +13,11 @@ var game = {
 			'trees': {
 				image: new Image(),
 				loaded: false
-			}
+			},
+      'lava': {
+        image: new Image(),
+				loaded: false
+      }
 	},
 	sounds: {
 		jump: new Audio('sounds/jump.wav')
@@ -33,6 +37,7 @@ var game = {
 
     this.backgrounds['sky'].image.src = "background.png"
 		this.backgrounds['trees'].image.src = "trees.png"
+		this.backgrounds['lava'].image.src = "lava.jpg"
 
 		for (var key in this.backgrounds) {
 			this.backgrounds[key].image.onload = function (currentKey) {
